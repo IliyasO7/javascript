@@ -240,12 +240,12 @@ var a = 50;
  11) Currying ?
 Currying is a concept of using one function to create more function out of it for example.
 
-     let multiply = function(x,y){
-         return console.log(x*y);
-       }
-
-     let multiplyByTwo = multiply.bind(this,2);
-     multiplyByTwo(3);
+                                                       let multiply = function(x,y){
+                                                           return console.log(x*y);
+                                                         }
+                                                  
+                                                       let multiplyByTwo = multiply.bind(this,2);
+                                                       multiplyByTwo(3);
 
  This is what currying is using one function to create more functions out of it.
 

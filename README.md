@@ -816,6 +816,7 @@ If present remove the number from the array , return the remaining array excludi
                                                         const a = 'iliyas'+5;
                                                             OUTPUT>> iliyas5
 61)what is wrapper Object?
+                                                               
                                                                     let str='hello'
                                                                     str.toUpperCase()
                                                                     

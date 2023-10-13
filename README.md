@@ -13,7 +13,7 @@ Its All about javascript
 
 2]What is an execution context?
 
-                       Its the block where the javascript program is being run and executed(I mean compiled and adn interpreted)
+                       Its the block where the javascript program is being run and executed(I mean compiled and  interpreted)
                        Interpreteer - Interpretter scans the code.
                        Compiler: Compiles the code into binary code.
 

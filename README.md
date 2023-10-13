@@ -249,6 +249,160 @@ Currying is a concept of using one function to create more function out of it fo
 
  This is what currying is using one function to create more functions out of it.
 
+ 12)Advanced Closures?
+
+                                                                                 function y(){
+                                                                                 for(var i=1;i<6;i++){
+                                                                                    function z(i){
+                                                                                        setTimeout(() => console.log(i ), i * 1000)
+                                                                                      }
+                                                                                     z(i)
+                                                                                   }
+                                                                                   console.log('Done Coding')
+                                                                                 }
+                                                                                y();
+                                            if it is var without a function it will refer to the same value of i at the end of the for loop.
+                                            if its let a new copy of i will be sent each time.
+  13) What is function statements?
+      When we give a name to a function with a keyword as function that is a function statement
+
+                                                              function a(){
+
+                                                                          }
+15) What is function Expression?
+     When we assign a function to a varibales that is a function expression
+    
+                                                          var x = function a(){
+         
+                                                                }
+16)what is the difference in both?
+ The difference is in hoisting, when you try to access x even before it has been initialised it gives undefined.
+
+ difference is in hoisting during memory creation statement func is alloted a memory and func is assigned to a
+ but in case of express,it is alloted a memory of undefined as its a var and during memory asisgning it will give us an error type error.
+
+ 17) what is func delcaration ?
+
+ When ever we use a function keyword to define any function that is a function statement or declarration.
+
+
+ 18)What is anonymous functions?
+
+      A function without a name is called an anonymous function.
+      function (){
+      }
+19) what is named function expression?
+    When we assign a named function to a variable that is a function expression.
+    
+                                                var x = function x(){
+                                                     console.log("FUNCTION EXPRESSION");
+                                             }
+                                            x();
+20)Tricky Questions?
+
+                                                       function fun1(a){
+                                                             return (b) => { 
+                                                             a = a + b;
+                                                              console.log(a)    
+                                                             }  
+                                                        fun1(10)(30) // 40
+
+                                                        INVALID ERROR SYNTAX
+                                                         function fun1(a){
+                                                          const fun2 = (b) => {
+                                                          a = a + b
+                                                          console.log(a)
+                                                         })
+                                                         fun1(10)(30)
+
+21) THIS
+    When ever a program is run an execution context is creaated along with it a windows object and a this keyword is also created that referes to global space variables.
+    and in function this referes to the object that is calling that function.
+
+22)Call back?
+When we pass a function inside another function we call and execute it inside that function that is called as call back funciton.
+
+                                                            var a=7;
+                                                            function x(y){
+                                                             console.log("X CALLED");
+                                                             y()
+                                                            };
+                                                            
+                                                            function y(){
+                                                                console.log("Y CALLED");
+                                                             }
+                                                            x(y);  
+
+ 23)What is garbage collection . Why do we need to free up memory , any idea?
+                          
+                           a) When ever a variable is out of execution Scope it gets eligble for garbage collection
+                           b) There is stack memory which stores static data like method and functions and then there is heap memmory which stores the objects that are referencing to these functions
+                              and methods and there is an algorithm that is used for garbage collection that is called as mark and sweep algorithm in that the progam start from the root global space and tries to                                    accumulate these objects to free up space.
+ 
+ 
+ 24) QUEUE Queues are based on the FIFO principle
+ 25) STACK Stacks are based on LIFO principle.
+
+26)Starvation?
+Startvation is phenomenon when the events in event quesue do not get the opportunitity to get executed because of the event is th emicro task queue which generally have higher priority.
+
+27) What is the use of spread operator?
+28) Spread operator is used to copy the preexisting values of an object!
+
+                                          const arr=["FOOTBALL","BASKET BALL"];
+                                          const copiedArr = [...arr, "TENIS"];
+                                          console.log(copiedArr);
+    
+29)Rest Operator  >Rest Operator is used to merge the arguements into an array 
+                                               
+                                                let arr = function(x,y,z){
+                                                      return[x,y,z]
+                                                  }
+                                                 console.log(arr(5,6,7));
+
+30)Iterating over an object?
+
+                                                         var studentobj = {
+                                                         'yash': 26,
+                                                         'vaibhav': 24,
+                                                         'rajesh' : 25,
+                                                         }
+
+                                                        for(const key in studentobj){
+                                                          console.log(`${key} in ${studentobj[key]}`);
+                                                        }
+                                                        
+31)Object question find average?
+
+                                                                          var persons = {
+                                                                            
+                                                                                        age1: 26,
+                                                                                        age2: 24,
+                                                                                        age3:29
+                                                                          }
+                                                                          
+                                                                          var len = Object.keys(persons).length;
+                                                                          
+                                                                          var values = Object.values(persons);
+                                                                          var sum=0;
+                                                                          for(var i=0;i<values.length;i++){
+                                                                            sum+=values[i]  
+                                                                          }
+                                                                          
+                                                                          var avg = sum/len; 
+                                                                          console.log(avg);
+
+32)
+                                                                          
+
+
+
+
+
+
+
+
+
  
  
   

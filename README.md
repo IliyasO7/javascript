@@ -810,7 +810,7 @@ If present remove the number from the array , return the remaining array excludi
                                                 let wish = salutation();
                                                 wish();
     
-60) What is coercion ?
+60 )  What is coercion ?
     
                                                         Implicit conversion of one data type to another is called as coercion.
                                                         const a = 'iliyas'+5;

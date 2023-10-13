@@ -795,7 +795,7 @@ If present remove the number from the array , return the remaining array excludi
     
             IN PASS BY REFERENCE WE actually pass the address of these variables and not the copy so any change insdie these function will change the actual values outside those function as well.
 
-    59)What is memoization in javascript?
+59)What is memoization in javascript?
 
     Its a form of caching,
     Ability of function to remember the reference to the vairables/attributes is called as memoisation.
@@ -809,12 +809,13 @@ If present remove the number from the array , return the remaining array excludi
                                                 }
                                                 let wish = salutation();
                                                 wish();
-    60) What is coercion ?
+    
+60) What is coercion ?
     
                                                         Implicit conversion of one data type to another is called as coercion.
                                                         const a = 'iliyas'+5;
                                                             OUTPUT>> iliyas5
-    61)what is wrapper Object?
+61)what is wrapper Object?
                                                                     let str='hello'
                                                                     str.toUpperCase()
                                                                     

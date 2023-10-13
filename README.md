@@ -19,6 +19,7 @@ Compiler: Compiles the code into binary code.
    var a=7;
 
 Examples :
+
                                     a)
                                                     var a = 3;
                                                     function printName(name){
@@ -57,10 +58,12 @@ Examples :
                                                   undefined
                                                   undefined
 4)Windows Object, this Keyword lexical scoping?
- When ever a program is run an execution context is created along with it a global object called windows and a this keyword is also ceatedand it referes to the object that is calling that function.
+
+    When ever a program is run an execution context is created along with it a global object called windows and a this keyword is also ceatedand it referes to the object that is calling that function.
 
  5)What is lexical Scopipng?
- When a function is run an execution context is created the access to the local memory along with the reference to the parent is called as lexical scoping.
+ 
+           When a function is run an execution context is created the access to the local memory along with the reference to the parent is called as lexical scoping.
 
                                                a)     var a =7;
                                                     function fun(){
@@ -90,7 +93,7 @@ Examples :
                                                                                 
   6)  LET,VAR,CONST
 
-      var is attached to global space a var van be reinitialized again and again it is les strict that const ,
+          var is attached to global space a var van be reinitialized again and again it is les strict that const ,
 
            a)  we can define a var with the same name and same identifier again and agian in the same scope.
                              var a=8;
@@ -105,7 +108,8 @@ Examples :
           c) let and const are hoisted they are in temporal deadzone for the time being
           A const  once defined cannot be reinitailised again and again; it is very strict.
 
-      7) SYNTAX<TYPE <REFERENCE ERRORS
+  7) SYNTAX<TYPE <REFERENCE ERRORS
+         
                                                   Type error
                                                   const a=7;
                                                     a=8;
@@ -115,16 +119,18 @@ Examples :
                                                  let a=9;
                                                  let a=10;
          
-          >  syntax error when you try to reinintialise a let with the same name and same identifier again and again.
+         
+              >  syntax error when you try to reinintialise a let with the same name and same identifier again and again.
 
                                                 Reference Error
                                                  console.log(z);
-         When you try to access a variable that is not in the scope that is a refernce error.
+                   When you try to access a variable that is not in the scope that is a refernce error.
 
 
   8) Closures, Set Timeouts!
     Closure?
-      A function bind together with a lexical scope is called as closure.
+
+         A function bind together with a lexical scope is called as closure.
                                     function outerFunction(){
                                       var a=7;
                                       function innerFunction(){
@@ -135,95 +141,101 @@ Examples :
                                     outerFunction();
 
 
+
   SETTIMEOUTS:
   a)
-  console.log('a');
-  console.log('b');
-  setTimeout(()=> console.log('c'), 1000);
-  setTimeout(()=> console.log('d'), 0);
-  console.log('e');
 
-  ANSWER:
-            a
-            b
-            e
-            d
-            c
+  
+                                            console.log('a');
+                                            console.log('b');
+                                            setTimeout(()=> console.log('c'), 1000);
+                                            setTimeout(()=> console.log('d'), 0);
+                                            console.log('e');
+                                          
+                                            ANSWER:
+                                                      a
+                                                      b
+                                                      e
+                                                      d
+                                                      c
+
 
 
 9) DIFFERENCE IN ARRAY FOR EACH AND ARRAY.MAP
-
-    FOR EACH > Array .forEach just traverser  over the array of elements it does not transform the elements of an array into a new array alltogether 
-   var arr = [1,2,3,5]
-   var newArr = arr.forEach((item, i ) => {
-              console.log(item + 'index' + i)
-              return item + i;
-          })
-          console.log(newArr)
-          
-          ANSWER
-                    1index0
-                    2index1
-                    3index2
-                    5index3
-                    UNDEFINED
-      MAP> Array.map transforms the array of elements into a new array altogether
-      
-   var arr = [1,2,3,5]
-   var newArr = arr.forEach((item, i ) => {
-              console.log(item + 'index' + i)
-              return item + i;
-          })
-          console.log(newArr)
-        ANSWER
-        1INDEX0
-        2INDEX1
-        3INDEX2
-        4INDEX3
-        5INDEX4
-        [ 1, 3, 5, 7, 9 ];
+                                    
+                                       FOR EACH > Array .forEach just traverser  over the array of elements it does not transform the elements of an array into a new array alltogether 
+                                       var arr = [1,2,3,5]
+                                       var newArr = arr.forEach((item, i ) => {
+                                                  console.log(item + 'index' + i)
+                                                  return item + i;
+                                              })
+                                              console.log(newArr)
+                                              
+                                              ANSWER
+                                                        1index0
+                                                        2index1
+                                                        3index2
+                                                        5index3
+                                                        UNDEFINED
+                                          MAP> Array.map transforms the array of elements into a new array altogether
+                                          
+                                       var arr = [1,2,3,5]
+                                       var newArr = arr.forEach((item, i ) => {
+                                                  console.log(item + 'index' + i)
+                                                  return item + i;
+                                              })
+                                              console.log(newArr)
+                                            ANSWER
+                                            1INDEX0
+                                            2INDEX1
+                                            3INDEX2
+                                            4INDEX3
+                                            5INDEX4
+                                            [ 1, 3, 5, 7, 9 ];
 
 
  10) Block Scope and Shadowing?
-  Block Scope : Two curly braces encoles together is a block scope.
-                      { }
-     Shadowing:
-     When you try to reinitialise a  variable again with a different value that is called a shadowing!
-Example 1:     
-                       var a = 50;
-                                {
-                                    var a =30;
-                                    let b = 20;
-                                    let c = 30;
-                                }
-                      console.log(a) //30 var is attached to global space.
 
-Example2 :
-                          const a = 50;  same for let as well!
-                            {
-                            var a =30;
-                            let b = 20;
-                            let c = 30;
-                            }
-                           console.log(a)
-                           SYntax Error as var is attached to global space!
-
-Example 3:
-var a = 50;
-          function fun(){
-              var a =30;
-              let b = 20;
-              let c = 30;
-          }
-      fun();
-      console.log(a) //50
+                                                     a)Block Scope : Two curly braces encoles together is a block scope.
+                                                                        { }
+                                                     b)Shadowing:
+                                                       When you try to reinitialise a  variable again with a different value that is called a shadowing!
+                                                  Example 1:     
+                                                                         var a = 50;
+                                                                                  {
+                                                                                      var a =30;
+                                                                                      let b = 20;
+                                                                                      let c = 30;
+                                                                                  }
+                                                                        console.log(a) //30 var is attached to global space.
+                                                  
+                                                  Example2 :
+                                                                            const a = 50;  same for let as well!
+                                                                              {
+                                                                              var a =30;
+                                                                              let b = 20;
+                                                                              let c = 30;
+                                                                              }
+                                                                             console.log(a)
+                                                                             SYntax Error as var is attached to global space!
+                                                  
+                                                  Example 3:
+                                                  var a = 50;
+                                                            function fun(){
+                                                                var a =30;
+                                                                let b = 20;
+                                                                let c = 30;
+                                                            }
+                                                        fun();
+                                                        console.log(a) //50
 
   
 
 
   
 10) CALL APLLY AND BIND
- Traditionally object used top have properties and method init , in javascript we can write objects seperately and methods seperatley and we can call apply and bind these methods on the object.
+    
+                Traditionally object used top have properties and method init , in javascript we can write objects seperately and methods seperatley and we can call apply and bind these methods on the object.
     
                                                         var obj={
                                                           val:1,
@@ -237,7 +249,7 @@ var a = 50;
                                                           addToThis.apply(obj,arr);
                                                           addToThis.bind(obj,arr);
     
- 11) Currying ?
+ 12) Currying ?
 Currying is a concept of using one function to create more function out of it for example.
 
                                                        let multiply = function(x,y){
@@ -248,6 +260,7 @@ Currying is a concept of using one function to create more function out of it fo
                                                        multiplyByTwo(3);
 
  This is what currying is using one function to create more functions out of it.
+
 
  12)Advanced Closures?
 
@@ -263,41 +276,48 @@ Currying is a concept of using one function to create more function out of it fo
                                                                                 y();
                                             if it is var without a function it will refer to the same value of i at the end of the for loop.
                                             if its let a new copy of i will be sent each time.
+                                            
   13) What is function statements?
-      When we give a name to a function with a keyword as function that is a function statement
+      
+                   When we give a name to a function with a keyword as function that is a function statement
 
                                                               function a(){
 
                                                                           }
 15) What is function Expression?
-     When we assign a function to a varibales that is a function expression
+
+                    When we assign a function to a varibales that is a function expression
     
                                                           var x = function a(){
          
                                                                 }
 16)what is the difference in both?
- The difference is in hoisting, when you try to access x even before it has been initialised it gives undefined.
 
- difference is in hoisting during memory creation statement func is alloted a memory and func is assigned to a
- but in case of express,it is alloted a memory of undefined as its a var and during memory asisgning it will give us an error type error.
+                  The difference is in hoisting, when you try to access x even before it has been initialised it gives undefined.
+                 
+                  difference is in hoisting during memory creation statement func is alloted a memory and func is assigned to a
+                  but in case of express,it is alloted a memory of undefined as its a var and during memory asisgning it will give us an error type error.
 
  17) what is func delcaration ?
 
- When ever we use a function keyword to define any function that is a function statement or declarration.
+               When ever we use a function keyword to define any function that is a function statement or declarration.
 
 
  18)What is anonymous functions?
 
-      A function without a name is called an anonymous function.
-      function (){
-      }
+                                  A function without a name is called an anonymous function.
+                                  function (){
+                                  }
+
+                                  
 19) what is named function expression?
-    When we assign a named function to a variable that is a function expression.
     
+                                   When we assign a named function to a variable that is a function expression.
                                                 var x = function x(){
                                                      console.log("FUNCTION EXPRESSION");
                                              }
                                             x();
+    
 20)Tricky Questions?
 
                                                        function fun1(a){
@@ -316,11 +336,13 @@ Currying is a concept of using one function to create more function out of it fo
                                                          fun1(10)(30)
 
 21) THIS
-    When ever a program is run an execution context is creaated along with it a windows object and a this keyword is also created that referes to global space variables.
-    and in function this referes to the object that is calling that function.
+    
+                     When ever a program is run an execution context is creaated along with it a windows object and a this keyword is also created that referes to global space variables.
+                     and in function this referes to the object that is calling that function.
 
 22)Call back?
-When we pass a function inside another function we call and execute it inside that function that is called as call back funciton.
+
+                      When we pass a function inside another function we call and execute it inside that function that is called as call back funciton.
 
                                                             var a=7;
                                                             function x(y){
@@ -340,20 +362,23 @@ When we pass a function inside another function we call and execute it inside th
                               and methods and there is an algorithm that is used for garbage collection that is called as mark and sweep algorithm in that the progam start from the root global space and tries to                                    accumulate these objects to free up space.
  
  
- 24) QUEUE Queues are based on the FIFO principle
+ 24) QUEUE Queues are based on the FIFO principle    
  25) STACK Stacks are based on LIFO principle.
 
 26)Starvation?
-Startvation is phenomenon when the events in event quesue do not get the opportunitity to get executed because of the event is th emicro task queue which generally have higher priority.
+
+              Startvation is phenomenon when the events in event quesue do not get the opportunitity to get executed because of the event is th emicro task queue which generally have higher priority.
+
 
 27) What is the use of spread operator?
-28) Spread operator is used to copy the preexisting values of an object!
+
+                            Spread operator is used to copy the preexisting values of an object!
 
                                           const arr=["FOOTBALL","BASKET BALL"];
                                           const copiedArr = [...arr, "TENIS"];
                                           console.log(copiedArr);
     
-29)Rest Operator  >Rest Operator is used to merge the arguements into an array 
+29)Rest Operator  Rest Operator is used to merge the arguements into an array 
                                                
                                                 let arr = function(x,y,z){
                                                       return[x,y,z]
@@ -373,6 +398,7 @@ Startvation is phenomenon when the events in event quesue do not get the opportu
                                                         }
                                                         
 31)Object question find average?
+
 
                                                                           var persons = {
                                                                             

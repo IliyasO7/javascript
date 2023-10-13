@@ -1,4 +1,4 @@
-# javascript
+# Javascript
 Its All about javascript
 
 

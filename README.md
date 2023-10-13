@@ -217,11 +217,40 @@ var a = 50;
           }
       fun();
       console.log(a) //50
-                          
-
 
   
 
+
+  
+10) CALL APLLY AND BIND
+ Traditionally object used top have properties and method init , in javascript we can write objects seperately and methods seperatley and we can call apply and bind these methods on the object.
+    
+                                                        var obj={
+                                                          val:1,
+                                                        }
+                                                        function addToThis(a,b,c){
+                                                          return console.log(this.val + a+b+c);
+                                                        }
+                                                        var arr=[5,6,9]
+                                                        
+                                                          addToThis.call(obj,5);
+                                                          addToThis.apply(obj,arr);
+                                                          addToThis.bind(obj,arr);
+    
+ 11) Currying ?
+Currying is a concept of using one function to create more function out of it for example.
+
+     let multiply = function(x,y){
+         return console.log(x*y);
+       }
+
+     let multiplyByTwo = multiply.bind(this,2);
+     multiplyByTwo(3);
+
+ This is what currying is using one function to create more functions out of it.
+
+ 
+ 
   
 
     

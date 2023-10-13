@@ -3,22 +3,27 @@ Its All about javascript
 
 
 1)What is javascript?
-Javascript is a single threaded synchronous language:
-a)single threaded means one line at a time and in a specific order.
- Everything in javascript happens inside an execution context,so whenever a program is run an execution context is created which has 2 components a memory component and a code component.
-  inside the memory component the variables are registered with undefined as memory and in the code execution phase the actual value is being alloted to these variables.
+
+
+    Javascript is a single threaded synchronous language:
+    a)single threaded means one line at a time and in a specific order.
+     Everything in javascript happens inside an execution context,so whenever a program is run an execution context is created which has 2 components a memory component and a code component.
+      inside the memory component the variables are registered with undefined as memory and in the code execution phase the actual value is being alloted to these variables.
+
 
 2]What is an execution context?
-Its the block where the javascript program is being run and executed(I mean compiled and adn interpreted)
-Interpreteer - Interpretter scans the code.
-Compiler: Compiles the code into binary code.
+
+                       Its the block where the javascript program is being run and executed(I mean compiled and adn interpreted)
+                       Interpreteer - Interpretter scans the code.
+                       Compiler: Compiles the code into binary code.
 
 3] What is hoisting in javascript?
-   When you try to access a varibale even before it has been alloted a memory that is hoisting.
-   console.log(a); //undefined
-   var a=7;
 
-Examples :
+                                   When you try to access a varibale even before it has been alloted a memory that is hoisting.
+                                   console.log(a); //undefined
+                                   var a=7;
+                                
+                                Examples :
 
                                     a)
                                                     var a = 3;

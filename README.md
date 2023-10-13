@@ -423,31 +423,423 @@ Currying is a concept of using one function to create more function out of it fo
                                                                           var avg = sum/len; 
                                                                           console.log(avg);
 
-32)
-                                                                          
+32)                  
 
+                                                                                    setTimeout(()=>{
+                                                                                    console.log("a");
+                                                                                    },2000)
+                                                                                    console.log("b");
 
+                                                                                 Print A first and B Later.
+                 1st Approach  is by Callback
+                 
+                                                                                        function x(y){
+                                                                                          setTimeout(()=>{
+                                                                                            console.log("a");
+                                                                                            y();
+                                                                                          },2000)
+                                                                                        }
+                                                                                        
+                                                                                        function y(){
+                                                                                          console.log("b");
+                                                                                        }
+                                                                                        x(y);
 
+                 2nd Approach is by Promises
+                 
+                                                                    const res = function printA(){
+                                                                      return new Promise((res,rej)=>{
+                                                                         setTimeout(()=>{
+                                                                                res("a");
+                                                                          },2000)
+                                                                      })
+                                                                    } 
+                                                                    
+                                                                    res().then((msg)=>{
+                                                                      console.log(msg)
+                                                                       console.log("b");
+                                                                    })
+33) What is Process.nextTick;
+ Difference between SetImmidiate and Process.nexttick
 
+                           SetImmidiate will execeture at the end of the event loop.
+                           Process.nextTick() will execute at the start of event loop. 
 
-
-
-
-
- 
- 
-  
-
+                                                     process.nextTick(()=>{
+                                                      console.log('hey');
+                                                    })
+                                                    
+                                                    setTimeout(function() {
+                                                      console.log("HELLO")
+                                                    }, 10);
     
-                    
-
-            
-  
-
+                                                  // hey
+                                                  // HELLO
          
-         
+                                                        
+35) how can you check if a variable is an array?
+
+                                                     Array.isArray() is function that is used of the Array class
+                                                        var arr=[5,6,9];                
+                                                        console.log(Array.isArray(arr));
+                                                        //true
+
+36)Output Questions
+
+                                                        SetImmidiate (()=>{
+                                                            console.log("first")
+                                                        })
+                                                        SetTimeout (()=>{
+                                                            console.log("second")
+                                                        })
+                                                            console.log("third");
+                                         ANSWER>>   THIRD
+                                                    SECOND
+                                                    FIRST
+                                                    
+37)What is difference between promise and call back?
+
+    A) Call back >>>    i) Call back is function that is passed inside another function called and executed inside that function,it is used to amke the async world behave more like sync world.
+                ii) The repetative passing of functions inside one another, creates calllback hell which is difficult to read and maintain that is the reason why we have promises,
+                    to avoid call back hell and to handle errors.
+                
+     B)Promise>   i)A promise is like a real world object it either gets resolved or it gets rejected or it goes into the pending state;
+          ii)A promise is used to avoid the call back hell and to make async world behave more like a synchronous programming
+          iii)Using then and catch block we can handle errors 
+          iv)The promise in return creates a promises hell its like a pyramid structure of then and catch block which is difficult to read and maintain so for that we have async and await.
+
+                                                const a = new Promise((res,rej)=>{
+                                                  res("PRINT A");
+                                                })
+                                                
+                                                a.then((msg)=>{
+                                                  console.log(msg)
+                                                }).catch((err)=>{
+                                                        console.log(err)}
+                                                // PRINT A      
+38)Difference in Array map,filter and Reduce?
+
+                                                                           A) FILTER
+                                                                    var arr = [5,6,9,10];
+                                                                    var res = arr.filter(checkAge)
+                                                                    function checkAge(x){
+                                                                      return x>5;
+                                                                    }
+                                                                    console.log(res) 
+                                                                    output>> 6,9,10
+
+                                                                            B)MAP
+                                                                    var arr = [5,6,9,10];
+
+                                                                    var res = arr.map((item,i)=>{
+                                                                      console.log(item + "INDEX"+ i)
+                                                                      return item+ i;
+                                                                    })
+                                                                    
+                                                                    console.log(res)
+                                                                    OUTPUT>>
+                                                                    5INDEX0
+                                                                    6INDEX1
+                                                                    9INDEX2
+                                                                    10INDEX3
+                                                                    [ 5, 7, 11, 13 ]
+
+                                                                        C)Reduce
+                                                                    Array.reduce is used to reduce the elements of an array into a new array altogether.
+                                                                    var res =var arr = [1,2,3,4];
+                                                                        var res = arr.reduce((sum,end)=>{
+                                                                          return sum+=end;
+                                                                        },0)
+                                                                        console.log(res)
+                                                                        OUTPUT> 10
+39)How to find the length of an object
+
+                                                                        var obj={
+                                                                            val:1,
+                                                                        }
+                                                                        Object.keys(obj).length
+                                                                        
+40)What is the temporal dead zone?
+
+        The time period between when the variable is defined and alloted a memory as undeifned and the actual initialization of the value to that varaible during the code execution phase that is called as 
+        temporal dead zone.
+        
+41)Write a function to generate random number between 10 and 99?
+        
+        const res = Math.floor(Math.random(10,99)*100);
+        console.log(res)
+
+42) Difference between null and undefined??
+
+                                               NULL>>        Null means unavailable does not exist
+                                               Undefined>>   Undefined means,A memoory was alloted to a varable while in memory execution phase but not the actual value.
+                                               Undeclared>>   when you try to access a variable that is not in the scope that is undeclared.
+43)     Difference between ‘==’ and’ ===’ ?
+        == it compares just the values not the datatype
+        === it compares both value as well as datatype , identicallly similar
+
+        console.log(null === undefined) //false
+        console.log(null == undefined)  //true
+    
+44) OUTPUT QUESTIONS
+    
+                                                    const fun = () => arguments.length;
+                                                    console.log(fun(1,2));
+                                                  //  OUTPUT 5 arguement is a global object with a lentgh of 5
+
+45)let str=”JavaScript=Node=Express”;  replace “=” with “.”
+
+                                                     console.log(str.replaceAll('=','.');
+
+46) str=”India” to "aidnI"
+
+                                                            let a= '';              
+                                                            for(let i =str.length-1; i>=0;i--){
+                                                                a += str.charAt(i);
+                                                            }
+                                                            console.log(a);
+
+47)Write a function to check if the given number "n" exists in the array.
+If present remove the number from the array , return the remaining array excluding the number else print element not present.
+        
+                                                        let arr=[7,8,9,10];
+                                                        let res = arr.filter(function(dig){
+                                                          return dig!=7;
+                                                        })
+                                                        console.log(res);
+48) Array.find()
+    
+                                                                 let arr = [5,6,7]
+                                                                 let res = arr.find(funciton(x) {
+                                                                        return x>6;
+                                                                    }
+                                                                    console.log(res); //7
+                 Here, the arr.find() method in JavaScript returns the value of the first element in the array that satisfies the provided testing method
+
+49) OUYTPUT QUESTIONS
+
+                                                                                async function fun1(){
+                                                                                        console.log('a');
+                                                                                        console.log('b');
+                                                                                        await setTimeout(() => console.log('c'), 1000)
+                                                                                        await setTimeout(() => console.log('d'), 0)
+                                                                                        console.log('e');
+                                                                                }
+                                                                                fun1();
+                                                               OUTPUT
+                                                                a,b,e,d,c
+                                               PRINTING IT IN RIGHT ORDER
+   
+                                                               async function fun1(){
+                                                                                    console.log('a');
+                                                                                    console.log('b');
+                                                                                    const res3 = await printC();
+                                                                                    console.log(res3)
+                                                                                    const res4 = await printD();
+                                                                                    console.log(res4)
+                                                                                    console.log('e');
+                                                                            }
+                                                        
+                                                                        function printC(){
+                                                                          return new Promise((res,rej)=>{
+                                                                            setTimeout(() =>  res('c'), 1000)
+                                                                          })
+                                                                        }
+                                                                        
+                                                                        function printD(){
+                                                                          return new Promise((res,rej)=>{
+                                                                            setTimeout(() =>  res('d'), 0)
+                                                                          })
+                                                                        } 
+                                                                        fun1()
+
+
+50) What are generator function in javascript ? How are they different from normal function?
+
+                A generator function is used to pause and resume a program using next and yeild
+ 
+                    function *generatorFunction(){
+                          console.log('HEY');
+                          yield 100;
       
-      
+                          console.log("HELLO THERE")
+                          yield 200;
+                        }
+                        
+                        const gen = generatorFunction();
+                        gen.next();
+                        gen.next();
+    
+51) What is an IIFE (Immediately Invoked function expression)? Can you give an example?
+    
+        when a funciton is defined and called right after its has been defined that is IIFE?
+
+                                                                  (()=>{
+                                                                        console.log("HELLO")
+                                                                    }();
+
+52) Explain the different ways of creating object in javascript? Explain all the 3 ways.
+
+                    i) 1 way is by class and constructors
+                                class Student{
+                                        constructor(name){
+                                            this.name=name;
+                                        }
+                                    }
+                                    const obj1 = new Strudent("ILIYAS");
+
+                    ii) 2nd way is my key value pairs?
+                                const obj={
+                                        age:1
+                                    }
+                
+                    iii)3rd is by Object Prortype method
+                                    const personProtoType = {
+                                                    greet(){
+                                                            console.log("HELLO")
+                                                        }       
+                                                 }
+                                    const carl = Object.create(personProtoType)
+                                            carl.greet()// HELLO
+                            ProtoTypes are the mechanisms by which one object tries to inherit the properties of another object.
+    
+53)What is object chaining in javascript? Can you create functions to explain object chaining better?
+
+                    Using output of function as an input to another is called as object chaining.
+
+                                                    const obj = function(){
+                                                     this.i=0;
+                                                      this.add = function(i){
+                                                         this.i+=i;
+                                                         return this;
+                                                      }  
+                                                      this.subtract = function(i){
+                                                         this.i-=i;
+                                                         return this;
+                                                      } 
+                                                      this.print = function(){
+                                                        return this.i;
+                                                      }
+                                                    }
+                                                    
+                                                    var x = new obj();
+                                                    console.log(x.add(5).subtract(3).print())
+                                                    //2
+                                                                    
+                                                           
+54) What is the main difference between fat arrow function and normal function?
+
+                                                                 const person ={
+                                                                  constructor(n){
+                                                                    this.name=n
+                                                                  }
+                                                                  
+                                                                  regFunction(){
+                                                                    setTimeout(function(){
+                                                                      console.log(this.name)
+                                                                    },1000);
+                                                                  }
+                                                                  
+                                                                  arrowFunction(){
+                                                                    setTimeout(()=>{
+                                                                      console.log(this.name)
+                                                                    },1000)
+                                                                  }
+                                                                }
+                                                                
+                                                                var obj = new person("ILIYAS");
+                                                                obj.regFunction(); //undefined
+                                                                obj.arrowFunction(); //ILIYAS
+
+
+                                                                //OTHER APPROACH
+                                                                    let person={
+                                                                      name:"ILIYAS",
+                                                                      af:()=>{
+                                                                        console.log(this.name);
+                                                                      },
+                                                                      
+                                                                      rf(){
+                                                                        console.log(this.name);
+                                                                      }
+                                                                    }
+                                                                    person.rf();
+                                                                    person.af();
+    
+55)What are the advantages of Axios vs other competitors( like fetch, http, got etc)? Why is axios so widely used?
+
+                        Axios has interceptors to modify request and responses and we dont have to explicitly convert the responses into json format it does it automatically as in fetch.
+                        
+                                    
+56) What is NaN property in JavaScript?
+
+                                                                        NAN means Not a Number it can be character String but not a number.
+    
+58) Explain pass by value and pass by reference? Give code example of how you would pass by reference in javascript?
+    
+                In pass by value the values that are passed inside the function hold new copy of values altogether they do not change the actual variables in the global scope.
+
+                                                            var a=7;
+                                                            var b=8;
+                                                            
+                                                            function passByValue(a,b){
+                                                              let temp=a;
+                                                              a=b;
+                                                              b=temp;
+                                                              
+                                                              console.log(a +'<<<a & b is>>>'+b);
+                                                            }
+                                                            passByValue(a,b)
+                                                            console.log("value of a and b" );
+                                                            console.log(a,b)
+    
+            IN PASS BY REFERENCE WE actually pass the address of these variables and not the copy so any change insdie these function will change the actual values outside those function as well.
+
+    59)What is memoization in javascript?
+
+    Its a form of caching,
+    Ability of function to remember the reference to the vairables/attributes is called as memoisation.
+
+                                              function salutation() {
+                                                let name = 'Aayush'
+                                                    function greet() {
+                                                        console.log(`Hello ${name}!`);
+                                                    }
+                                                    return greet;
+                                                }
+                                                let wish = salutation();
+                                                wish();
+    60) What is coercion ?
+    
+                                                        Implicit conversion of one data type to another is called as coercion.
+                                                        const a = 'iliyas'+5;
+                                                            OUTPUT>> iliyas5
+    61)what is wrapper Object?
+                                                                    let str='hello'
+                                                                    str.toUpperCase()
+                                                                    
+                                                    whenever you try to access a property of a string str, JavaScript coerces the string value to an object,
+                                                    by new String(str). This object is called a wrapper object.
+                                                   // optional >> It inherits all string methods, and is used to resolve the property reference.
+     
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        
+
+                                                                    
 
 
 

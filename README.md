@@ -827,7 +827,9 @@ If present remove the number from the array , return the remaining array excludi
 
 
 TOP 5 CODING QUESTIONS ON JAVASCRIPT
-FIND FREQUENCY OF WORDS :
+
+
+    FIND FREQUENCY OF WORDS :
 
                                                                         const arr =["JAVA","HELLO", "SCRIPT", "HELLO"];
                                                                         

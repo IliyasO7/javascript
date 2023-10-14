@@ -824,13 +824,117 @@ If present remove the number from the array , return the remaining array excludi
                                                     by new String(str). This object is called a wrapper object.
                                                    // optional >> It inherits all string methods, and is used to resolve the property reference.
      
-    
+
+
+TOP 5 CODING QUESTIONS ON JAVASCRIPT
+FIND FREQUENCY OF WORDS :
+
+                                                                        const arr =["JAVA","HELLO", "SCRIPT", "HELLO"];
+                                                                        
+                                                                        function countWords(p){
+                                                                          let result = p.reduce((allNames,name)=>{
+                                                                            if(name in allNames){
+                                                                              allNames[name]++
+                                                                            }else{
+                                                                              allNames[name]=1
+                                                                            }
+                                                                            return allNames
+                                                                        
+                                                                          },{})
+                                                                            return result;
+                                                                        }
+                                                                        
+                                                                        console.log(countWords(arr));
 
 
 
+    GROUP BY 
+                                                                                
+                                                                                let person=[
+                                                                                  {
+                                                                                    name:'iliyas',age:23
+                                                                                  },
+                                                                                  {
+                                                                                    name:'shreyan',age:23
+                                                                                  },
+                                                                                  {
+                                                                                    name:'yash',age:24
+                                                                                  }
+                                                                                ];
+                                                                                
+                                                                                
+                                                                                function groupBy(arr){
+                                                                                  let check={};
+                                                                                  arr.forEach((item)=>{
+                                                                                    if(!check[item.age]){
+                                                                                      check[item.age]=[item];
+                                                                                    }else{
+                                                                                      check[item.age].push(item)
+                                                                                    }
+                                                                                  })
+                                                                                  return check
+                                                                                }
+                                                                                console.log(groupBy(person));
+    Balanced Parenthesis!
+                                                                let str = "({}[])";
+
+                                                                let st = [];
+                                                                
+                                                                for(var i=0;i<str.length;i++){
+                                                                  if(!st.length==0){
+                                                                    st.push(s.charAt(i));
+                                                                  }else if(st.length>0 && s.charAt(i)=='(' && st.top(')')){
+                                                                    st.pop();
+                                                                  }
+                                                                  else if(st.length>0 && s.charAt(i)=='{' && st.top('}')){
+                                                                    st.pop();
+                                                                  }
+                                                                  else if(st.length>0 && s.charAt(i)=='[' && st.top(']')){
+                                                                    st.pop();
+                                                                  }
+                                                                }
+                                                                
+                                                                if(st.length ==0){
+                                                                  console.log('true')
+                                                                }else{
+                                                                  console.log('false')
+                                                                }
+                                                                                
+Find Missing
+
+                                                        let arr = [1,2,3,5];
+                                                        
+                                                        function findMissing(ar){
+                                                          let missing=[]
+                                                          for(var i=0;i<ar.length;i++){
+                                                            if(!(ar[i+1] - arr[i] == 1) && !(arr[i+1] == undefined)){
+                                                              missing.push(arr[i] + 1);
+                                                            }
+                                                          }
+                                                          return missing;
+                                                          
+                                                        }
+                                                        
+                                                        console.log(findMissing(arr))
 
 
 
+REMOVE DUPLICATES
+
+                                                                    let arr = [1,2,3,,3,4,5];
+                                                                    function unique(ar){
+                                                                      let items={}
+                                                                      
+                                                                      ar.forEach((item)=>{
+                                                                        if(!items[item]){
+                                                                          items[item]= item;
+                                                                        }
+                                                                      })
+                                                                      
+                                                                      return Object.values(items)
+                                                                    }
+                                                                    
+                                                                    console.log(unique(arr))
 
 
 

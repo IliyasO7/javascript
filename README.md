@@ -878,29 +878,29 @@ TOP 5 CODING QUESTIONS ON JAVASCRIPT
                                                                                 }
                                                                                 console.log(groupBy(person));
     Balanced Parenthesis!
-                                                                let str = "({}[])";
+                                                                 let s = '{([])';
 
-                                                                let st = [];
-                                                                
-                                                                for(var i=0;i<str.length;i++){
-                                                                  if(!st.length==0){
-                                                                    st.push(s.charAt(i));
-                                                                  }else if(st.length>0 && s.charAt(i)=='(' && st.top(')')){
-                                                                    st.pop();
-                                                                  }
-                                                                  else if(st.length>0 && s.charAt(i)=='{' && st.top('}')){
-                                                                    st.pop();
-                                                                  }
-                                                                  else if(st.length>0 && s.charAt(i)=='[' && st.top(']')){
-                                                                    st.pop();
-                                                                  }
-                                                                }
-                                                                
-                                                                if(st.length ==0){
-                                                                  console.log('true')
-                                                                }else{
-                                                                  console.log('false')
-                                                                }
+                                                            let st = [];
+                                                            
+                                                            for(var i=0;i<s.length;i++){
+                                                              if(st.length==0 || s.charAt(i) == '('|| s.charAt(i) == '{' || s.charAt(i) == '{'){
+                                                                st.push(s.charAt(i));
+                                                              }else if(!st.length ==0 && s.charAt(i)==')' && st[st.length-1] == '('){
+                                                                st.pop();
+                                                              }
+                                                              else if(!st.length ==0 && s.charAt(i)=='}' && st[st.length-1] == '{'){
+                                                                st.pop();
+                                                              }
+                                                              else if(!st.length ==0 && s.charAt(i)==']' && st[st.length-1] == '['){
+                                                                st.pop();
+                                                              }
+                                                            }
+                                                            
+                                                            if(st.length ==0){
+                                                              console.log('true')
+                                                            }else{
+                                                              console.log('false')
+                                                            }
                                                                                 
 Find Missing
 

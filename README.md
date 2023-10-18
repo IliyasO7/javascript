@@ -1,3 +1,33 @@
+NODE.JS 
+About yourself
+2. Any past internship experience?
+3. Do you know how actually client-server architecture works?
+4. So when I say client, so what exactly is client? Let's say I'm using Google Chrome or Mozilla Firefox or something. When I say client, what does it mean? What does it refer to? 
+5. What is the flow of login?
+6. How does remember me work in general?
+7. What do you know about refresh tokens?
+8. What is the brevo integration you used in Expense tracker?
+9. How is the group chat application working?
+10. What is socket io and how does it work?
+11. Is javascript single threaded or multi threaded?
+12. what is the meaning of single threaded?
+13. Can javascript handle Async behaviour if its a single threaded?
+14. How can it handle Async behaviour?
+15. Explain Event loop architecture. and what is async await?
+16. What http method is used for the login api?
+17. Can we use get and Post interchangeably for login?
+18. Different http methods in RESTful API.
+19. difference between put and patch.
+20. Puzzle: There are two ropes. And each rope can burn completely in 60 minutes. And the burning rate is non uniform. How can you know when the 45 mins have been passed
+21. SQL question: 
+
+
+
+
+
+
+
+
 # Javascript
 Its All about javascript
 

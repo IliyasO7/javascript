@@ -941,8 +941,16 @@ REMOVE DUPLICATES
 
 
 
+Low coupling>
 
-
+                
+                In backend development, "low in coupling and high in cohesion" refers to the design principles that aim to make software systems more modular, maintainable, and scalable.
+                
+                Low coupling means that the components or modules of the system are designed to be independent of each other. In other words, they have minimal or no dependencies on each other. This design principle makes the codebase easier to maintain, test, and modify because changes in one module do not affect other modules in the system. It also allows for better scalability as new features can be added without disturbing the existing system.
+                
+                High cohesion, on the other hand, refers to the design principle of grouping related functionality together within a module or component. This means that the functions or methods within a module have a common purpose and work together to achieve that purpose. This design principle also makes the codebase easier to maintain, test, and modify, as changes to one function or method affect only the related functionality.
+                
+                In summary, low coupling and high cohesion are two important design principles that promote modularity, maintainability, and scalability in software systems. By minimizing dependencies and grouping related functionality, developers can create software systems that are easier to work with and modify, leading to a more stable and maintainable codebase over time.
 
 
                                                         

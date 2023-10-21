@@ -281,6 +281,10 @@ WRITE  A QUERY TO DISLAY EMAILID GIVE THE COUNT OF DUPLICATE DATA
     from TABLE
     GROUP BY COLUMNNMAE
     HAVNIG COUNT(*) > 1;
-    
+
+
+    TOP
+      SELECT TOP 10 *
+      FROM Customers;  
 
             

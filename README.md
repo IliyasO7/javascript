@@ -2,7 +2,7 @@
 
 What is Sequelize and why it is used?
 
-                SEQUELIZE is an OBJECT Relational mapping library , we want to work on the data no thte querry os sequelize is used!.
+                SEQUELIZE is an OBJECT Relational mapping library , we want to work on the data not hte querry so sequelize is used!.
 
 Why you are using MySql and why not NoSQL in the project?
 

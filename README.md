@@ -899,8 +899,9 @@ If present remove the number from the array , return the remaining array excludi
                                                     by new String(str). This object is called a wrapper object.
                                                    // optional >> It inherits all string methods, and is used to resolve the property reference.
      
-    
-
+61)     
+var a = 1+2+'a';
+console.log(typeof(a)) //Stirng
 
 
 

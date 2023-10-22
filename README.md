@@ -3,6 +3,9 @@ BAISC Repo
 https://github.com/learning-zone/nodejs-basics
 About 
 
+    How to hadnle max size space:
+    node --max-old-space-size=<NEW_SIZE_IN_MB> index.js
+
 
     2. Any past internship experience?
 

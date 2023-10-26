@@ -1,3 +1,22 @@
+FIND MAX IN AN ARRAY:
+
+              //find max in array
+              var arr=[5, 4, 7, 2, 6]
+              
+              for(var i=0;i<arr.length-1;i++){
+                var max = arr[i];
+                var swap=0;
+                if(max>arr[i+1]){
+                  swap = arr[i+1];
+                  arr[i+1]=arr[i];
+                  arr[i]=swap;
+                }else{
+                  max =arr[i+1];
+                }
+              }
+              console.log(max)
+
+
 Insertion sort
 
                                         

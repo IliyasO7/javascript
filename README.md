@@ -1,3 +1,5 @@
+LINUX BASICS : https://www.geeksforgeeks.org/linux-interview-questions/#q1 
+
 # Javascript
 Its All about javascript
 

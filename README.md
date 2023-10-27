@@ -235,3 +235,21 @@ MAX SUM IN 2D array
                                     
                                     console.log(max)
 
+
+
+Count the maximum words 
+
+                                          var sentences = ["alice and bob love leetcode", "i think so too", "this is great thanks very much"]
+                                          var maxCount = 0;
+                                          for(var i=0;i<sentences.length;i++){
+                                            var count=1;
+                                            for(var j=0;j<sentences[i].length;j++){
+                                              if(sentences[i][j] == ' '){
+                                                count++;
+                                              }
+                                            }
+                                            if(count>maxCount){
+                                              maxCount=count;
+                                            }
+                                          }
+                                          console.log(maxCount)

@@ -90,7 +90,27 @@ ABSTRACTION
                                         console.log(this.firstname,this.lastname)
                                     }
                                 }
-                                    
+
+STATIC: 
+
+              When you want to access a property of a class you have to craete an instace of it but when you want to access only certain properties then static comes into picture
+
+                                     class CountObjects{
+                                           static count=0;
+                                            constructor(name){
+                                              this.name=name;
+                                              CountObjects.count++;
+                                            }
+                                            
+                                            getCount(){
+                                              console.log('TOTAL COUNT IS ',CountObjects.count)
+                                            }
+                                           
+                                         }
                                          
+                                         var o1 = new CountObjects('ILIYAS')
+                                         var o2 = new CountObjects("YUVI")    
+                                         o2.getCount()
+                                                                                  
     
     

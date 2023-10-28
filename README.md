@@ -256,6 +256,7 @@ Count the maximum words
 
 "TIME COMPLETXITY"
 1)
+
                                                 var a=0
                                                 for(var i=0;i<N;i++){
                                                   for(var j=N;j>i;j--){
@@ -411,3 +412,155 @@ Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
                               
                                   
                               };
+
+
+HASHMAP :                        
+LUCKY INTEGER IN AN ARRAY
+  
+                                              var findLucky = function(arr) {
+                                            
+                                                let map = new Map();
+                                            
+                                                for(var i=0;i<arr.length;i++){
+                                                    if(map.has(arr[i])){
+                                                        map.set(arr[i], map.get(arr[i])+1 )
+                                                    }else{
+                                                        map.set(arr[i],1)
+                                                    }
+                                                }
+                                                let maxKey=-1;
+                                                for(var j=0;j<arr.length;j++){
+                                                    if(arr[j] === map.get(arr[j]) && maxKey <map.get(arr[j])){
+                                                        maxKey=arr[j]
+                                                    }
+                                                }
+                                                return maxKey;
+                                            
+                                                
+                                            };
+
+JEWELS AND STONES:
+
+You're given strings jewels representing the types of stones that are jewels, and stones representing the stones you have. Each character in stones is a type of stone you have. You want to know how many of the stones you have are also jewels.
+Letters are case sensitive, so "a" is considered a different type of stone from "A".
+Example 1:
+
+Input: jewels = "aA", stones = "aAAbbbb"
+
+Output: 3
+                                                  
+                                                  var jewels = "aA";
+                                                  var stones = "aAAbbbb";
+                                                  
+                                                  let map = new Map();
+                                                  
+                                                  for(var i=0;i<jewels.length;i++){
+                                                      map.set(jewels.charAt(i),i)
+                                                  }
+                                                  
+                                                  var count=0;
+                                                  for(var j=0;j<stones.length;j++){
+                                                    if(map.has(stones.charAt(j))){
+                                                      count++;
+                                                    }
+                                                  }
+                                                  console.log(count)
+
+
+
+
+STACKS:
+
+
+    MIN STACKS
+
+    class MinStack {  
+      Stack<Integer> stack = new Stack<>();
+      Stack<Integer> min_value = new Stack<>();    
+  
+       /* public MinStack() {
+          
+          
+      }
+    */
+    
+    public void push(int val) {
+        if(min_value.isEmpty() || val<= min_value.peek())
+        {
+            min_value.push(val);
+        }
+        
+        stack.push(val);
+    }
+    
+    public void pop() {
+        
+        if(stack.peek().equals(min_value.peek()))
+        {
+            min_value.pop();
+        }
+        
+        stack.pop();
+    }
+    
+    public int top() {
+        return stack.peek();
+    }
+    
+    public int getMin() {
+        return min_value.peek();
+    }
+}
+
+Valid parenthesis:
+
+    Stack<Character> st = new Stack<>();
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i) == '('|| s.charAt(i) == '{' || s.charAt(i) == '[')
+            {
+                st.push(s.charAt(i));
+            }
+            else if (!st.isEmpty() && s.charAt(i) == ')' && st.peek().equals('('))
+            {
+                st.pop();
+            }
+            else if (!st.isEmpty() && s.charAt(i) == '}' && st.peek().equals('{'))
+            {
+                st.pop();
+            }
+            else if (!st.isEmpty() && s.charAt(i) == ']' && st.peek().equals('['))
+            {
+                st.pop();
+            }
+            else 
+                return false;
+        }
+        if(st.isEmpty())
+        {
+            return true;
+        }
+        else 
+            return false;
+    }
+}
+
+
+Validate Stack Sequence:
+
+    int j=0;
+          int n = pushed.length;
+          Stack<Integer> st = new Stack();
+        for(int i=0;i<n;i++)
+        {
+            st.push(pushed[i]);
+            while(!st.isEmpty() && st.peek()==popped[j])
+            {
+                st.pop();
+                ++j;
+            }
+        }
+        return j==n;
+    }
+}
+                  

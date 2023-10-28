@@ -548,19 +548,19 @@ Valid parenthesis:
 
 Validate Stack Sequence:
 
-    int j=0;
-          int n = pushed.length;
-          Stack<Integer> st = new Stack();
-        for(int i=0;i<n;i++)
-        {
-            st.push(pushed[i]);
-            while(!st.isEmpty() && st.peek()==popped[j])
-            {
-                st.pop();
-                ++j;
+            int j=0;
+                  int n = pushed.length;
+                  Stack<Integer> st = new Stack();
+                for(int i=0;i<n;i++)
+                {
+                    st.push(pushed[i]);
+                    while(!st.isEmpty() && st.peek()==popped[j])
+                    {
+                        st.pop();
+                        ++j;
+                    }
+                }
+                return j==n;
             }
-        }
-        return j==n;
-    }
-}
+      }
                   

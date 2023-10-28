@@ -803,7 +803,7 @@ If present remove the number from the array , return the remaining array excludi
     Ability of function to remember the reference to the vairables/attributes is called as memoisation.
 
                                               function salutation() {
-                                                let name = 'Aayush'
+                                                     name = 'Aayush'
                                                     function greet() {
                                                         console.log(`Hello ${name}!`);
                                                     }
